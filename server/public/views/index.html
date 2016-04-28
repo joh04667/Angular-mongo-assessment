@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="SuperApp">
+  <head>
+    <meta charset="utf-8">
+    <title>MEAN stack app</title>
+    <link rel="stylesheet" href="views/bootstrap.min.css">
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+  </head>
+  <body>
+    <div class="header well">
+      <h2>SUPERRRR</h2>
+    </div>
+
+    <div class="heroCreate col-lg-6" ng-controller="CreateController">
+    <div>
+    <form name="heroes">
+      <input type="text" ng-model="hero.alias" placeholder="Alias"  required/>
+      <input type="text" ng-model="hero.first_name" placeholder="First Name"  required/>
+      <input type="text" ng-model="hero.last_name" placeholder="Last Name"  required/>
+      <input type="text" ng-model="hero.city" placeholder="City"  required/>
+      <select ng-model="hero.power_name" ng-options= "power for power in powerList" required></select>
+      <input type="submit" ng-click="submit()">
+    </form>
+  </div>
+
+
+
+
+    <div class="heroDisplay col-lg-6">
+
+      <div class="displayHERO">
+        <div ng-repeat="heroes in heroList">
+            <h5>{{heroes.alias}}</h5>
+            <p>Name: {{heroes.first_name}} {{heroes.last_name}}</p>
+            <p>City: {{heroes.city}}</p>
+            <p>Superpower: {{heroes.power_name}}</p>
+            <button ng-click="delete(heroes)">Delete</button>
+            <hr>
+          <div>
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+    </div>     <!--end create-->
+
+
+  </body>
+</html>
